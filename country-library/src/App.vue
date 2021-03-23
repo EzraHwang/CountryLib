@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <Home/>
-    <CountriesTable/>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <SearchBox />
+    <CountriesTable />
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
+import SearchBox from './components/SearchBox.vue'
 import CountriesTable from './components/CountriesTable.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Home,
+    SearchBox,
     CountriesTable
-  },
-};
+  }
+}
 </script>
 
 <style>
