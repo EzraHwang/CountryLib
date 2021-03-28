@@ -1,22 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" />
     <SearchBox />
     <CountriesTable />
   </div>
 </template>
 
 <script>
-import SearchBox from './components/SearchBox.vue'
-import CountriesTable from './components/CountriesTable.vue'
+import SearchBox from "./components/SearchBox.vue";
+import CountriesTable from "./components/CountriesTable.vue";
+
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+
+Vue.use(VueAxios, axios);
 
 export default {
-  name: 'App',
+  name: "App",
+  created() {
+    Vue.axios.get("https://restcountries.eu/rest/v2/name/united").then((response) => {
+      console.log(response.data);
+    });
+  },
   components: {
     SearchBox,
-    CountriesTable
-  }
-}
+    CountriesTable,
+  },
+};
 </script>
 
 <style>
